@@ -12,3 +12,11 @@ You can @mention a GitHub username to generate a link to their profile. The resu
 
 ### Support or Contact
 Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+```cpp
+class LRUCache {
+private:    struct LRUNode {        LRUNode(T key_, V value_) :            key(key_),            value(value_) {                in_time = time(NULL);            }        T key;        V value;        time_t in_time;    };
+    typedef boost::multi_index::multi_index_container<        LRUNode,        boost::multi_index::indexed_by<            boost::multi_index::sequenced<>,            boost::multi_index::hashed_unique<                boost::multi_index::member<LRUNode, T, &LRUNode::key> >        >    > LRUList;
+private:    LRUList _lru_list;    int _capacity;};//LRUCache
+
+```
